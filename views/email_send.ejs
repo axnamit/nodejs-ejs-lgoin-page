@@ -1,0 +1,22 @@
+<%- include('partials/header') %>
+<div class="form-container">
+  <% if(locals.error) { %>
+  <div class="alert alert-danger"><%= error %></div>
+  <% } %> <% if(locals.success) { %>
+  <div class="alert alert-success"><%= success %></div>
+  <% } %>
+  <form action="/forget_password" method="POST">
+    <div class="form-group">
+      <label for="email" class="color">Email*</label>
+      <input
+        type="text"
+        name="email"
+        id="email"
+        class="form-control"
+        required
+      />
+    </div>
+    <button class="btn-share">Reset Password</button>
+  </form>
+</div>
+<%- include('partials/footer') %>

@@ -1,0 +1,40 @@
+<%- include('partials/header') %> <% if(locals.error) { %>
+<div class="alert alert-danger"><%= error %></div>
+<% } %> <% if(locals.success) { %>
+<div class="alert alert-success"><%= success %></div>
+<% } %>
+<div class="prompt">
+  Enter the code generated on your mobile device below to log in!
+</div>
+
+<form
+  method="post"
+  action="/otp_verify"
+  class="digit-group"
+  data-group-name="digits"
+  data-autosubmit="false"
+  autocomplete="off"
+>
+  <input type="text" id="digit1" name="digit1" data-next="digit2" />
+  <input
+    type="text"
+    id="digit2"
+    name="digit2"
+    data-next="digit3"
+    data-previous="digit1"
+  />
+  <input
+    type="text"
+    id="digit3"
+    name="digit3"
+    data-next="digit4"
+    data-previous="digit2"
+  />
+
+  <input type="text" id="digit4" name="digit4" data-previous="digit3" />
+
+  <div class="form-group">
+    <button type="submit" class="btn btn-primary btn-share">Verify otp</button>
+  </div>
+</form>
+<%- include('partials/footer') %>
