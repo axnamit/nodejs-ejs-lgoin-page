@@ -32,7 +32,7 @@ app.use(
 app.set("view engine", "ejs");
 let dburl = "mongodb://127.0.0.1:27017/test-db";
 
-const dbKeys = require("./config/config").mongoURI || dburl;
+const dbKeys = dburl;
 const port = process.env.SERVER_PORT || 3000;
 console.log(port);
 mongoose
