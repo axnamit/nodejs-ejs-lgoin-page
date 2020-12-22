@@ -52,9 +52,9 @@ module.exports = register_user = (req, res) => {
                 .then((saveresposne) => {
                   let locals = {
                     error: null,
-                    success: saveresposne.firstName,
+                    success: "You are registred",
                   };
-                  return res.render("error", locals);
+                  return res.render("login", locals);
                 })
                 .catch((error) => {
                   let locals = {
